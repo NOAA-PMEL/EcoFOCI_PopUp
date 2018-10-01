@@ -1,0 +1,42 @@
+
+Labeled R5,7,9,11 properly with 3.74K
+
+Renamed U10 to JP3
+
+Renamed D1 to JP0
+
+Labeled C3 properly as 0.1 uF
+
+Added JP5 and J5 to BOM (header and connector for thermistor)
+
+Labeled/named U21 properly (LT1129 5v regulator)
+
+Changed U5 from M74VHC1GT125 to NL17SZ07DFT2G (Used wrong IC for 5V to 3v3 logic shift)
+
+Changed Test Point size to 0.040"
+
+Changed Test Points to Red, Black, and Yellow
+
+Updated BOM for temp circuit resistors - R12,15,16,13 (switched package sizes)
+
+Routed Pin 3 to +5V on U18 (3v3 regulator ENABLE wasn't connected)
+
+Changed C3 to VDD input of U2, Temperature ADC (Was connected to Vin-)
+
+Changed NPN transistors (T1-T4) to PNP Transistors (Q3-Q6)
+
+Changed headers for all sensors to Molex 70543
+
+Moved Iridium to Bottom of PCB
+
+Changed Iridium Power and Iridium OnOff Pins
+
+Added logic gate to adxl345 SPI lines
+
+Added Diode to Arduino +5V
+
+Changed temperature circuit
+
+Changed BOM for temp circuit
+
+*Use taller female headers for Arduino ICSP and Iridium Module

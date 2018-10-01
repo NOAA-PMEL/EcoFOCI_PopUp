@@ -1,0 +1,58 @@
+Identifier	Value	Part Number	Description	Qty	Size/Package	Size/Package	Comments	
+"B1, B2"	"GPS Backup, RTC Backup"	952-1662-1-ND	Lithium Battery Clip	2	CR1220SMT	CR1220-SMD		
+"B3, B4"	"GPS Coincell, RTC Coincell"	N033-ND	12mm 3V lithium coin cell	2	CR1220SMT	CR1220-SMD	DNP	
+"C1,C3,C6,C7,C9,C10,C11,C12,C13,C14,C15,C16,C17,C22,C23,C24,C25,C27"	0.1 uF	399-5089-1-ND	Capacitor	18	CAP0603-CAP	0603-CAP		
+"C2,C8"	4.7 uF	1276-2087-1-ND	Capacitor	2	CAP0603-CAP	0603-CAP		
+C5	7.5pF	1276-2339-1-ND	Capacitor	1	CAP0603-CAP	0603-CAP		
+C4	0.22 uF	445-1318-1-ND	Capacitor	1	CAP0603-CAP	0603-CAP		
+"C18,C26"	10 uF	311-1376-1-ND	Capacitor	2	CAP1206-CAP	1206-CAP		
+C19	3.3 uF	399-3694-1-ND	"Capacitor, Polarized Tantalum"	1	CAP1206-CAP	1206-CAP		
+"C20,C21"	1 uF	311-1372-1-ND	Capacitor	2	CAP0603-CAP	0603-CAP		
+D1	MBR0540	MBR0540TPMSCT-ND	"20V, 500mA"	1	SOD-123	SOD-123		
+"D2, D3"	SM Sig	1N4148WSFSCT-ND	Diode	2	DIODESOD-323F	SOD-323F		
+"JP1, JP4, JP6"	"PAR, Thermistor, BATT"	WM4800-ND	"0.100"" 2 Pin Male Header, Shrouded"	3	1x2 male header	1x02		
+"J1, J4, J6"	"PAR Connector, Thermistor Connector, Batt Connector"	WM2900-ND	"0.100"" 2 Pin Female Housing, With Latch"	3	1x2 female housing	1x02	"Not on Board, DNP"	
+"JP2, JP3"	"PRESSURE1, PRESSURE2"	WM4802-ND	"0.100"" 4 Pin Male Header, Shrouded"	2	1x5 male header	1X05		
+"J2, J3"	"PRESSURE1 Connector, PRESSURE2 Connector"	WM2902-ND	"0.100"" 4 Pin Female Housing, With Latch"	2	1x5 female housing	1X05	"Not on Board, DNP"	
+JP5	SMA_R/A	A97593-ND	"RF/COAXIAL, SMA JACK, R/A, 50OHM, THD"	1	901-143	AMPHENOL_901-143		
+"Q1, Q2"	BSS138	BSS138CT-ND	N-Channel Mosfet	2	SOT23	SOT23		
+"Q3,Q4,Q5,Q6"	AO3407A	785-1006-1-ND	P-Channel Mosfet	4	SOT23	SOT23		
+R1	"33.2k, 1%"	311-33.2KHRCT-ND	Resistor	1	R-US_R0603	R0603		
+R2	"1.15k, 1%"	311-1.15KHRCT-ND	Resistor	1	R-US_R0603	R0603		
+R3	"200k, 0.1%"	P200KDBCT-ND	Resistor	1	R-US_R0603	R0603		
+R4	"33K, 1%"	311-33KGRCT-ND	Resistor	1	R-US_R0603	R0603		
+R6	"49.9K, 1%"	311-49.9KHRCT-ND	Resistor	1	R-US_R0603	R0603		
+"R5,R7,R9,R11"	"3.74k, 1%"	311-3.74KHRCT-ND	Resistor	4	R-US_R0603	R0603		
+R12	10k**	Y1630-10.0KBCT-ND	"Resistor, 0.01%, 0.2PPM"	1	R-US_R1206	R1206		
+"R17,R18,R21,R23,R25,R27"	1k	311-1.0KGRCT-ND	Resistor	6	R-US_R0603	R0603		
+"R19,R20,R22,R24"	100k	311-100KGRCT-ND	Resistor	4	R-US_R0603	R0603		
+"R26,R28"	10k	311-10KGRCT-ND	Resistor	2	R-US_R0603	R0603		
+TR1	10k	615-1069-ND	Thermistor	1	"THERMISTOR-2,5"	"RS-2,5"	"Not on Board, DNP"	
+"SHTDN, ALARM,  MOSI3v3, MISO3v3, SCK3v3, MOSI5v, MISO5v, SCK5v, SDA3V3, SCL3V3, SDA5V, SCL5V, GPSRX3V3, GPSTX3V3, GPSRX5V, GPSTX5V, VPAR"	TP-040	36-5004-ND	"Test Point, Yellow"	18	TP-040	TP-040		
+"GND1,GND2,GND3"	TP-040	36-5001-ND	"Test Point, Black"	3	TP-040	TP-040		
+"VBATT,+5V,+3V3, +3VP**,+3VT**"	TP-040	36-5000-ND	"Test Point, Red"	4	TP-040	TP-040		
+"U1,U4"	MAX6126	MAX6126AASA30+-ND	"3V, 0.02% Precision Voltage Regulator"	2	MAX6126	SOIC127P600X175-8N		
+U2	ADS1100-A1	296-14298-1-ND	Self-Calibrating 16 Bit ADC - Address A1	1	ADS1100A0IDBVT	SOT95P280X145-6N		
+U3	OPA320	296-29510-1-ND	Operational Amplifier	1	OPA320AIDBVT	SOT95P280X145-5N		
+"U8,U14"	M74VHC1GT125	M74VHC1GT125DF1GOSCT-ND	Noninverting Buffer / CMOS Logic Level Shifter	2	M74VHC1GT125DF1G	SOT65P210X110-5N		
+U6	ADS1100-A0	296-12966-1-ND	Self-Calibrating 16 Bit ADC - Address A0	1	ADS1100A0IDBVT	SOT95P280X145-6N		
+U7	ADG836	ADG836LYRMZ-ND	SPDT Switch	1	ADG836	MSOP10		
+U9	FGPMMOPA6H	https://www.adafruit.com/products/790	GPS Module - MTK MT3339 Chipset	1	GPS_FGPMMOPA6H	FGPMMOPA6H		
+"U5, U11"	NL17SZ07DFT2G	NL17SZ07DFT2GOSCT-ND	Single Non-Inverting Buffer 	2	NL17SZ07DFT2G	SOT65P210X110-5N		
+U10	SN74LVC1G32DCKR	296-9848-1-ND	Single OR Gate	1	SC-70-5	SC-70-5		
+U12	Arduino Mega 2650		Arduino Mega 2650	1	Arduino Mega 2650	Arduino Mega 2650	"**Populate with 0.100"" headers, HF… and HM…"	
+U13	RockBlock Mk2		RockBlock Mk2	1	RockBlock Mk2	RockBlock Mk2	"**Populate with 0.100"" headers, HF… and HM…"	
+U15	M74HC4050	296-14529-1-ND	HEX BUFFER/CONVERTER	1	M74HC4050RM13TR	SOIC127P600X175-16N		
+U16	SDCard Socket	101-00660-68-6-1-ND	microSD Socket	1	USD-SOCKETNEW	MICRO-SD-SOCKET-PP		
+U17	ADXL345	ADXL345BCCZ-ND	"3-Axis, Digital Accelerometer"	1	ADXL345	LGA14		
+U18	LP5907	296-38557-1-ND	50-mA LOW-DROPOUT LINEAR REGULATOR	1	TPS77033	SOT23-DBV		
+U19	Inverter	NC7S14M5XCT-ND	SINGLE SCHMITT-TRIGGER INVERTER	1	1P1G14MDBVREPG4	SOT95P280X145-5N		
+U20	DS3234	DS3234SN#T&RCT-ND	SPI RTC module 	1	DS3234	DS3234		
+U21	LT1129	LT1129IQ-5#PBF-ND	5V Voltage Regulator	1	LT1129CQ-5	Q5-DD		
+U22	LT1013	296-12982-1-ND	1 MHz Op Amp	1	8-SOIC	8-SOIC		
+U22	LT1634	LT1634BIS8-1.25#PBF-ND	1.25V Shunt Regulator	1	8-SOIC	8-SOIC		LT1634AIS8-1.25#PBF-ND
+HF1	1x6	S7039-ND	"1x6 female header, unshrouded"	1	1x6 female header	1x6 	"**not labeled on board, see photo"	
+HF2	1x8	S7041-ND	"1x8 female header, unshrouded"	1	1x8 female header	1x8	"**not labeled on board, see photo"	
+HF3	2x3	S7106-ND	"2x3 female header, unshrouded"	1	2x3 female header	2x3	"**not labeled on board, see photo"	
+"HM1,HM2,HM3,HM4,HM5,HM6,HM7"	1x8	952-2271-ND	"1x8 male header, unshrouded"	7	1x8 male header	1x8	"**not labeled on board, see photo"	
+"HM8,HM9,HM10"	1x10	952-1843-ND	"1x10 male header, unshrouded"	3	1x10 male header	1x10	"**not labeled on board, see photo"	

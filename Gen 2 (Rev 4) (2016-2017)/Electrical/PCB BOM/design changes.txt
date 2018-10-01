@@ -1,0 +1,17 @@
+-Add 10k Pull up resistor to U5 and U11 outputs (NL17SZ07 is open drain, cannot pull high)
+    - R8 and R10
+	
+**SPI Mode 0 or 2 for SD card?
+
+-Changed to microfit 3.0 connectors
+
+- Moved placement of iridium module
+	- Moved other components to fit better
+	
+- Swapped Pins A14 and A15 for Iridium TXD and RXD
+
+- Changed Pin 44 to Pin A6
+
+- Changed Pin 8 to Pin 22
+
+- Changed Pin 22 to Pin 8

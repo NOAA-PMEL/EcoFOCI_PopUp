@@ -1,0 +1,80 @@
+Unit Status:
+  SD Card Initialized Successfully.
+  Current RTC Time/Date: Apr 11 2017 13:20:47
+  Temp Sensor ADC Val: 5912 (approx 23.12 C)
+  Temp Ref    ADC Val: 5499 (approx 24.76 C)
+  PAR  Sensor ADC Val: 4849 (approx 0.46 umol/(m2s))
+  100m Pressure Sensor Val: 16597 (approx 0.65 m)
+  30m  Pressure Sensor Val: 16455 (approx 0.07 m)
+  Accelerometer Reading: -995.3 (approx 174.4 degrees from vertical)
+
+Offset values for post-calibration:
+  Pressure Offset: 16384
+  Temperature Offset: 21000
+  Temperature Reference Offset: 5600
+  PAR Offset: 4700
+
+Deployment Schedule:
+--PHASE 1--
+  Unit will start sampling [Apr 11 2017 14:00:00] and take a sample every (1h,0m,0s)
+--PHASE 2--
+  Release Expected [Apr 13 2017 12:00:00] (<--Set Burn Wire Release for this exact time/date.)
+  Unit will wake up  (1h,0m,0s) before scheduled release and wait for profile.
+  Start of profile will be triggered by a change in depth of (2 meters).
+  Profile will sample at 4 Hz for (0h,1m,0s) seconds before proceeding to phase 3. 
+  If unit does not sense the release within  (2h,0m,0s) it will assume it missed the profile and proceed to phase 3.
+--PHASE 3--
+  Unit will assume it is under ice until [Apr 14 2017 09:00:00]
+  Unit will take a sample every (1h,0m,0s) and search for GPS location only once a day to conserve battery power.
+--PHASE 4--
+  Unit will no longer assume it is under ice after [Apr 14 2017 09:00:00]
+  Unit will take a sample and search for GPS location every (1h,0m,0s)
+  Unit will search for GPS (1 times) for (0h,2m,0s) with (0h,0m,20s)  between each attempt to confirm a lock.
+  If unit does successfully find a GPS lock, it will attempt to send data back in the following order:
+  1-File Summary, 2-Profile Data, 3-Under Ice Data, 4-Bottom Data
+  If any messages send successfully, the unit will automatically make another attempt in (0h,5m,0s)
+  Otherwise, the unit will return to sampling and searching for GPS every (1h,0m,0s)
+
+**Check all settings, take a screenshot of this dialog, and disconnect from USB when ready.**
+**Set Burn Wire Release for [Apr 13 2017 12:00:00]**
+ 
+Unit Status:
+  SD Card Initialized Successfully.
+  Current RTC Time/Date: Apr 11 2017 14:12:43
+  Temp Sensor ADC Val: 5970 (approx 22.90 C)
+  Temp Ref    ADC Val: 5497 (approx 24.76 C)
+  PAR  Sensor ADC Val: 4845 (approx 0.20 umol/(m2s))
+  100m Pressure Sensor Val: 16437 (approx 0.16 m)
+  30m  Pressure Sensor Val: 16597 (approx 0.20 m)
+  Accelerometer Reading: -998.0 (approx 176.3 degrees from vertical)
+
+Offset values for post-calibration:
+  Pressure Offset: 16384
+  Temperature Offset: 21000
+  Temperature Reference Offset: 5600
+  PAR Offset: 4700
+
+Deployment Schedule:
+--PHASE 1--
+  Unit will start sampling [Apr 11 2017 15:00:00] and take a sample every (1h,0m,0s)
+--PHASE 2--
+  Release Expected [Apr 13 2017 12:00:00] (<--Set Burn Wire Release for this exact time/date.)
+  Unit will wake up  (1h,0m,0s) before scheduled release and wait for profile.
+  Start of profile will be triggered by a change in depth of (2 meters).
+  Profile will sample at 4 Hz for (0h,1m,0s) seconds before proceeding to phase 3. 
+  If unit does not sense the release within  (2h,0m,0s) of waking it will assume it missed the profile and proceed to phase 3.
+--PHASE 3--
+  Unit will assume it is under ice until [Apr 14 2017 09:00:00]
+  Unit will take a sample every (1h,0m,0s) and search for GPS location only once a day to conserve battery power.
+--PHASE 4--
+  Unit will no longer assume it is under ice after [Apr 14 2017 09:00:00]
+  Unit will take a sample and search for GPS location every (1h,0m,0s)
+  Unit will search for GPS (1 times) for (0h,2m,0s) with (0h,0m,20s)  between each attempt to confirm a lock.
+  If unit does successfully find a GPS lock, it will attempt to send data back in the following order:
+  1-File Summary, 2-Profile Data, 3-Under Ice Data, 4-Bottom Data
+  If any messages send successfully, the unit will automatically make another attempt in (0h,5m,0s)
+  Otherwise, the unit will return to sampling and searching for GPS every (1h,0m,0s)
+
+**Check all settings, take a screenshot of this dialog, and disconnect from USB when ready.**
+**Set Burn Wire Release for [Apr 13 2017 12:00:00]**
+ 

@@ -1,0 +1,52 @@
+       4952-1662-1-ND              B1, B2
+      36399-5089-1-ND              C1,C3,C6,C7,C9,C10,C11,C12,C13,C14,C15,C16,C17,C22,C23,C24,C25,C27
+       41276-2087-1-ND             C2,C8
+       21276-2339-1-ND             C5
+       2445-1318-1-ND              C4
+       4311-1376-1-ND              C18,C26
+       2399-3694-1-ND              C19
+       4311-1372-1-ND              C20,C21
+       2MBR0540TPMSCT-ND           D1
+       41N4148WSFSCT-ND            D2, D3
+       6WM4800-ND                  JP1, JP4, JP6
+       6WM2900-ND                  J1, J4, J6
+       4WM4802-ND                  JP2, JP3
+       4WM2902-ND                  J2, J3
+       2A97593-ND                  JP5
+       4BSS138CT-ND                Q1, Q2
+       8785-1006-1-ND              Q3,Q4,Q5,Q6
+       2311-33.2KHRCT-ND           R1
+       2311-1.15KHRCT-ND           R2
+       2P200KDBCT-ND               R3
+       2311-33KHRCT-ND             R4
+       2311-49.9KHRCT-ND           R6
+       8311-3.74KHRCT-ND           R5,R7,R9,R11
+       2Y1630-10.0KBCT-ND          R12
+      12311-1KGRCT-ND              R17,R18,R21,R23,R25,R27
+       8311-100KGRCT-ND            R19,R20,R22,R24
+       4311-10KGRCT-ND             R26,R28
+      3636-5004-ND                 SHTDN, ALARM,  MOSI3v3, MISO3v3, SCK3v3, MOSI5v, MISO5v, SCK5v, SDA3V3, SCL3V3, SDA5V, SCL5V, GPSRX3V3, GPSTX3V3, GPSRX5V, GPSTX5V, VPAR
+       636-5001-ND                 GND1,GND2,GND3
+       836-5000-ND                 VBATT,+5V,+3V3, +3VP**,+3VT**
+       4MAX6126AASA30+-ND          U1,U4
+       2296-14298-1-ND             U2
+       2296-29510-1-ND             U3
+       4M74VHC1GT125DF1GOSCT-ND    U8,U14
+       2296-12966-1-ND             U6
+       2ADG836LYRMZ-ND             U7
+       4NL17SZ07DFT2GOSCT-ND       U5, U11
+       2296-9848-1-ND              U10
+       2296-14529-1-ND             U15
+       2101-00660-68-6-1-ND        U16
+       2ADXL345BCCZ-ND             U17
+       2296-38557-1-ND             U18
+       2NC7S14M5XCT-ND             U19
+       2DS3234SN#T&RCT-ND          U20
+       2LT1129IQ-5#PBF-ND          U21
+       2296-12982-1-ND             U22
+       2LT1634BIS8-1.25#PBF-ND     U22
+       2S7039-ND                   HF1
+       2S7041-ND                   HF2
+       2S7106-ND                   HF3
+      14952-2271-ND                HM1,HM2,HM3,HM4,HM5,HM6,HM7
+       6952-1843-ND                HM8,HM9,HM10
