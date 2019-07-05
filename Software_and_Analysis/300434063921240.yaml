@@ -23,9 +23,9 @@ underside_temp_cal:
   Ccoef: 1.3222558E-06
 
 topside_temp_cal: 
-  Acoef: 1.2711155E-03
-  Bcoef: 5.419057E-04
-  Ccoef: 1.1402101E-06
+  Acoef: 1.1954720E-03
+  Bcoef: 5.2877341E-04
+  Ccoef: 1.3222558E-06
   
 par_cal: 
   offset:  5462
