@@ -1,8 +1,11 @@
 ---
 UnitID: 300434063925210
 PopUP_SN: 105
+#100 series units where setup in AKDT
+# if its a 'seconds since' it needs a correction
+# convert recorded times (AKDT) to times below in UTC
 Unit_Start_Time: '2018-9-22 08:00:00'
-Unit_Release_Time: '2019-3-1 00:00:00' 
+Unit_Release_Time: '2019-3-1 23:00:00' 
 Unit_Deploy_Time: '2018-10-10 02:26:00'
 Deploy_LatN: 59.89135
 Deploy_LonW: 171.2518166667

@@ -1,9 +1,10 @@
 ---
 UnitID: 300434063921240
 PopUP_SN: 101
+#100 series units where setup in AKDT
+# if its a 'seconds since' it needs a correction
+# convert recorded times (AKDT) to times below in UTC
 Unit_Start_Time: '2018-8-7 08:00:00'
-#seems theres a 9hr offset? UTC vs local
-#this file is with times all in UTC
 Unit_Release_Time: '2019-4-30 23:00:00'
 Unit_Deploy_Time: '2018-8-14 06:38:00'
 Deploy_LatN: 71.222833
