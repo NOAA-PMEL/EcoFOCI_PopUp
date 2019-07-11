@@ -23,10 +23,14 @@ underside_temp_cal:
   Bcoef: 5.2877341E-04
   Ccoef: 1.3222558E-06
 
+#calibration coefficients are not too different than below but lead
+# to 10degree offset in temperature during the bottom data timeseries
+# using the bottomside cal coeffs makes the data better but not sure 
+# what the root cause is, so hesitate to make this correction.
 topside_temp_cal: 
-  Acoef: 1.1954720E-03
-  Bcoef: 5.2877341E-04
-  Ccoef: 1.3222558E-06
+  Acoef: 1.271116E-03
+  Bcoef: 5.419057E-04
+  Ccoef: 1.140210E-06
   
 par_cal: 
   offset:  5462
