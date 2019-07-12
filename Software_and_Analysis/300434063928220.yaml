@@ -38,3 +38,6 @@ par_cal:
 fluor_cal: 
   offset:  0
   slope:  0
+
+### other notes
+# comparing onboard clock to gps seems to indicate a 7hr error in clocks (pc+7 = gps)
