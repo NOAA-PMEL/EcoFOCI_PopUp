@@ -255,7 +255,7 @@ void displayDeploymentParameters(){
     Serial.println(F("  SD Card Initialized Successfully."));
   }
   else{
-    Serial.println(F("  **SD Card error.  Check if SD Card is present."));
+    Serial.println(F("  **SD Card error.  Check if SD Card is present. If SD Card is present reset Arduino Mega with loopback test."));
   }
   SPI.setDataMode(SPI_MODE1);                         	                                                //Set SPI mode to 1 for RTC 
   DateTime now = RTC.now();
