@@ -1,3 +1,18 @@
+
+//INPUT for POP-UP S/N
+#define SN 2018                       //INPUT POP-UP S/N as SN = ####
+
+//INPUT for Topside Temperature Probe (TTP)
+float At = 0.00117611211;  //INPUT Steinhart-Hart Coeficient A for probes and unit of interest
+float Bt = 0.000231799033;  //INPUT Steinhart-Hart Coeficient B for probes and unit of interest
+float Ct = 0.000000106066762;  //INPUT Steinhart-Hart Coeficient C for probes and unit of interest
+
+//INPUT for Sea Surface Temperature (SST) Probe
+float As = 0.00105471332;  //INPUT Steinhart-Hart Coeficient A for probes and unit of interest
+float Bs = 0.00024840849;   //INPUT Steinhart-Hart Coeficient B for probes and unit of interest
+float Cs = 0.0000000603057951;  //INPUT Steinhart-Hart Coeficient C for probes and unit of interest
+
+
 //include various libraries
 #include <ctype.h>
 #include <math.h>                      //Library for math functions used in calculating sensor values
@@ -44,8 +59,8 @@
 #define UNDER_ICE_SAMPLE_INTERVAL 3600			  //Interval between samples at the surface (or uncer ice)	  (nominal UNDER_ICE_SAMPLE_INTERVAL 3600	= 1 hour)
 #define DRIFT_MODE_SAMPLE_INTERVAL 10800			//Interval between samples at the surface (or uncer ice)	  (nominal DRIFT_MODE_SAMPLE_INTERVAL 10800	= 3 hours)
 #define PROFILE_LENGTH_SECONDS 90			      //Length of profile in seconds				                      (nominal PROFILE_LENGTH_SECONDS 90 = 90 seconds)
-#define TIMEZONE -7                            //
-//#define DEPTH_CHANGE_TO_TRIP_PROFILE 2           //Depth in meters needed to begin profile mode            (nominal DEPTH_CHANGE_TO_TRIP_PROFILE 2 = 2 meters)
+#define TIMEZONE 0                            //
+#define DEPTH_CHANGE_TO_TRIP_PROFILE 2           //Depth in meters needed to begin profile mode            (nominal DEPTH_CHANGE_TO_TRIP_PROFILE 2 = 2 meters)
 
 HardwareSerial &IridiumSerial = Serial1;        //Define Alias for Iridium Serial Comms (Arduino MEGA Serial1)
 HardwareSerial &CameraSerial = Serial2;         //Define Alias for Iridium Serial Comms (Arduino MEGA Serial2)
@@ -80,18 +95,8 @@ struct
   int azimuth;
   int snr;
 } 
+
 sats[MAX_SATELLITES];
-
-
-//***************************************************************************************************************************************************************************//
-//***SET DATES AND PROGRAM INTERVALS HERE************************************************************************************************************************************//
-//***************************************************************************************************************************************************************************//
-DateTime unitStart =    DateTime(18, 9, 29, 0, 0, 0);            	//Date and Time of first sample: 				                  DateTime(YEAR,MON,DAY,HOUR,MIN,SEC);
-DateTime releaseTime =  DateTime(19, 3, 15, 15, 0, 0);           	//Date and Time of actual release of burn wire: 	      	DateTime(YEAR,MON,DAY,HOUR,MIN,SEC);
-uint8_t  DEPTH_CHANGE_TO_TRIP_PROFILE = 2;			              //Depth in meters needed to begin profile mode		        (nominal DEPTH_CHANGE_TO_TRIP_PROFILE 2	= 2 meters)
-//**************************************************************************************************************************************************************************//
-//***END PROGRAM DATES AND SAMPLE INTERVAL SECTION**************************************************************************************************************************//
-//**************************************************************************************************************************************************************************//
 
 void setup() {
   Serial.begin(115200);                       //Turn the Serial Protocol ON
@@ -132,10 +137,12 @@ void loop() {                 //continue running loop to display options to user
   Serial.println(F("'C' - check Camera"));                                  //Print to user interface
   Serial.println(F("'D' - display SD Card Data"));                          //Print to user interface
   Serial.println(F("'X' - delete all SD Card Data"));                       //Print to user interface
+  Serial.println(F("'8' - conduct SST temp response test at 4Hz"));         //Print to user interface
+  Serial.println(F("'9' - conduct TTP temp response test at 4Hz"));         //Print to user interface  
   Serial.println(F("-----------------------------------------------"));     //Print to user interface
   Serial.println();                                                         //Print to user interface
 
-  DateTime now = RTC.now();             //Set system tie to time from RTC
+  DateTime now = RTC.now();             //Set system time to time from RTC
   byte byteRead;                        //variable to read Serial input from user
   boolean waitingforInput = true;       //variable to wait for user input
 
@@ -158,23 +165,27 @@ void loop() {                 //continue running loop to display options to user
       //break intentionally omitted, go to displaySensor() function
       case  54 :                        //if user enters '6', check PAR
       //break intentionally omitted, go to displaySensor() function
+      case  56 :                        //if user enters '8', test SST response time
+      //break intentionally omitted, go to displaySensor() function
+      case  57 :                        //if user enters '9', test TTP response time
+      //break intentionally omitted, go to displaySensor() function
       case  55 :                        //if user enters '7', check Fluorometer
         displaySensor(byteRead);        //display measurements from selected sensor
         waitingforInput = false;        //Stop reading user Input
         break;                          //exit switch case
-      case  83 :                        //if user enters '8', check GPS
+      case  83 :                        //if user enters 'S', check GPS
         lookforGPSSatellites();         //function to check GPS functionality
         waitingforInput = false;        //Stop reading user Input
         break;                          //exit switch case
-      case  70 :                        //if user enters '8', check GPS
+      case  70 :                        //if user enters 'F', check GPS
         lookforGPSFix();                //function to check GPS functionality
         waitingforInput = false;        //Stop reading user Input
         break;                          //exit switch case
-      case  73 :                        //if user enters '9', check Iridium
+      case  73 :                        //if user enters 'I', check Iridium
         checkIridium();                 //function to check Iridium functionality
         waitingforInput = false;        //Stop reading user Input
         break;                          //exit switch case
-      case  67 :                        //if user enters '0', check Camera
+      case  67 :                        //if user enters 'C', check Camera
         checkCamera();                  //function to check Camera functionality
         waitingforInput = false;        //Stop reading user Input
         break;                          //exit switch case
@@ -192,11 +203,11 @@ void loop() {                 //continue running loop to display options to user
         break;                          //exit switch case
     }
   }
-  delay(2000);                          //wait 2 seconds before running the loop again
+  delay(1000);                          //wait 1 second before running the loop again
 }
 
 void initializePins() {
-  pinMode(SHUTDOWN, OUTPUT);		           //SHUTDOWN PIN for turning unit off (Sleep mode)
+  pinMode(SHUTDOWN, OUTPUT);		         //SHUTDOWN PIN for turning unit off (Sleep mode)
   digitalWrite(SHUTDOWN, HIGH);			     //SHUTDOWN PIN HIGH keeps unit's power on
   pinMode(TEMP_SWITCH_1, OUTPUT);			   //TEMP_SWITCH PIN for switching between thermistors and reference resistor
   digitalWrite(TEMP_SWITCH_1, LOW);		   //TEMP_SWITCH PIN HIGH for reading reference resistor
@@ -246,7 +257,7 @@ void displayStatus() {
     Serial.println(F("  SD Card Initialized Successfully."));
   }
   else {                                                                                              //if SDCard does not start successfully
-    Serial.println(F("  **SD Card error.  Check if SD Card is present and re-start program.**"));
+    Serial.println(F("  **SD Card error.  Check if SD Card is present and re-start program. If SD Card is present conduct loopback test to reset Arduino.**"));
   }
   displayRTCTime();                     //Display RTC Time on Serial Monitor
   displayTemperatures();                //Display Temperature Sensor measurement and Reference Resistor Value on Serial Monitor
@@ -268,7 +279,7 @@ void displayRTCTime() {                           //display RTC Time on Serial M
   Serial.println(now.toString(buf, len));         //Print formatted date/time to serial monitor
 }
 
-void displaySensor(char menuInput) {                  //function to display measurement from sensors once every second, menuInput defines which sensor to display
+void displaySensor(char menuInput) {                  //function to display measurement from sensors once every 1/4 second, menuInput defines which sensor to display
   if (menuInput == 55) {                              //if user entered '7'
     Serial.println(F("Turning on Fluorometer..."));
     turnOnFluorometer();                              //Turn on the fluorometer
@@ -279,32 +290,49 @@ void displaySensor(char menuInput) {                  //function to display meas
   boolean waitingforInput2 = true;                    //variable to wait for user input
   byte byteRead = 0;                                  //variable to read user input from Serial Monitor
   while (waitingforInput2 == true) {                  //until the user Enters 'Q' to stop...
+    
     if (Serial.available()) {                         //if anything has been input into the Serial Monitor
-      byteRead = Serial.read();                     //read serial monitor input
+      byteRead = Serial.read();                       //read serial monitor input
     }
+    
     if (byteRead == 81) {                             //if user Enters 'Q'
-      waitingforInput2 = false;                     //stop waiting for user input and exit this dialog
+      waitingforInput2 = false;                       //stop waiting for user input and exit this dialog
     }
-    if (menuInput == 51) {                            //If user selected temperature
-      displayTemperatures();                           //display temperature measurement and reference resistor reading to serial monitor
+    
+    else if (menuInput == 51) {                            //If user entered '3'
+      displayTemperatures();                          //display temperature measurements and reference resistor reading to serial monitor
       Serial.println();
     }
+    
     else if (menuInput == 52) {                       //If user entered '4'
       displayPressure();                              //display pressure measurement on serial monitor
       Serial.println();
     }
+    
     else if (menuInput == 53) {                       //If user entered '5'
       displayAccelerometer();                         //display accelerometer (tilt sensor) measurement on serial monitor
     }
+    
     else if (menuInput == 54) {                       //If user entered '6'
       displayPAR();                                   //display PAR measurement on serial monitor
     }
+    
     else if (menuInput == 55) {                       //If user entered '7'
       displayFluor();                                 //display fluorometer measurement on serial monitor
     }
+
+    else if (menuInput == 56) {                       //If user entered '8'
+      TestSSTResponse();                             //display SST temp response test on serial monitor
+    }
+    
+    else if (menuInput == 57) {                       //If user entered '9'
+      TestTTPResponse();                             //display TTP temp response test on serial monitor
+    }
+    
     else {}
-    delay(1000);                                      //wait 1 second in between sensor readings
+    delay(250);                                      //take 4 sensor readings per second, once every 250 milliseconds
   }
+  
   if (menuInput == 55) {                              //If user entered '7'
     Serial.println(F("Turning off Fluorometer..."));
     turnOffFluorometer();                             //Turn off power to fluorometer
@@ -339,12 +367,12 @@ void displayPAR() {
   Serial.println(F(" umol/(m2s))"));
 }
 
-void displayTemperatures() {                                                                                    //function to display temperature reading to serial monitor
+void displayTemperatures() {                                                                                //function to display temperature reading to serial monitor
   int tempValTop = readTopTemp();                                                                           //read voltage from top probe thermistor
   Serial.print(F("  Temp Sensor ADC Val: "));
   Serial.print(tempValTop);
   Serial.print(F(" (approx "));
-  float tempCalc = (1 / (.0012768 + .00053964 * log10(tempValTop) + .0000011763 * pow(log10(tempValTop), 3))) - 273.15; //calculate estimated temperature based on Steinhart-hart equation
+  float tempCalc = (1 / (At + Bt * log(tempValTop) + Ct * pow(log(tempValTop), 3))) - 273.15;               //calculate estimated temperature from Steinhart-Hart equation
   Serial.print(tempCalc, 2);
   Serial.println(F(" C)"));
 
@@ -352,17 +380,31 @@ void displayTemperatures() {                                                    
   Serial.print(F("  SST (Sea Surface Temp) Sensor ADC Val: "));
   Serial.print(tempValSST);
   Serial.print(F(" (approx "));
-  float SSTCalc = (1 / (.0012768 + .00053964 * log10(tempValSST) + .0000011763 * pow(log10(tempValSST), 3))) - 273.15; //calculate estimated temperature based on Steinhart-hart equation
+  float SSTCalc = (1 / (As + Bs* log(tempValSST) + Cs * pow(log(tempValSST), 3))) - 273.15;                  //calculate estimated temperature from Steinhart-Hart equation
   Serial.print(SSTCalc, 2);
   Serial.println(F(" C)"));
 
-  int tempRefVal = readTempRef();                                                                           //read voltage from reference thermistor
+  int tempRefVal = readTempRef();                                                                            //read voltage from reference thermistor
   Serial.print(F("  Temp Ref    ADC Val: "));
   Serial.print(tempRefVal);
-  float tempRefCalc = (tempRefVal / 16384.0 * 3.0 / 4.0) * 39.872;                                              //calculate estimated resistance based on voltage output curve from LTSpice model
+  float tempRefCalc = (tempRefVal / 16384.0 * 3.0 / 4.0) * 39.872;                                            //calculate estimated resistance based on voltage output curve from LTSpice model
   Serial.print(F(" (approx "));
   Serial.print(tempRefCalc, 2);
   Serial.println(F(" kOhms)"));
+}
+
+void TestSSTResponse() {
+  int tempValSST = testSST();
+  float SSTCalc = (1 / (As + Bs * log(tempValSST) + Cs * pow(log(tempValSST), 3))) - 273.15;                  //calculate calibrated temperature from Steinhart-Hart equation
+  Serial.print(SSTCalc, 2);                                                                                   //the '2' after SSTCalc, '2' designates taking temp measurement to the nearest 100th of a degree
+  Serial.println(F(" C"));
+}
+
+void TestTTPResponse() {
+  int tempValTop = testTopTemp();
+  float TTPCalc = (1 / (As + Bs * log(tempValTop) + Cs * pow(log(tempValTop), 3))) - 273.15;                  //calculate calibrated temperature from Steinhart-Hart equation
+  Serial.print(TTPCalc, 2);                                                                                   //the '2' after TTPCalc, '2' designates taking temp measurement to the nearest 100th of a degree
+  Serial.println(F(" C"));
 }
 
 void displayPressure() {                                    //function to display pressure reading to serial monitor
@@ -1203,34 +1245,54 @@ void setupTempADC() {
 }
 
 int16_t readTopTemp() {			             //function to read temperature ADC for top thermistor
-  digitalWrite(TEMP_SWITCH_1, HIGH);		   //send signal to switch to top thermistor reading
+  digitalWrite(TEMP_SWITCH_1, HIGH);		 //send signal to switch to top thermistor reading
   digitalWrite(TEMP_SWITCH_2, LOW);		   //send signal to switch to top thermistor reading
-  delay(1000);						                //delay to let voltage stabilize
-  int16_t measurement = readTempADC();	  //read the ADC (Same for thermistor or reference)
+  delay(1000);						               //delay to let voltage stabilize
+  int16_t measurement = readTempADC();	 //read the ADC (Same for thermistor or reference)
   digitalWrite(TEMP_SWITCH_1, LOW);		   //send signal to switch back to reference resistor 1
   digitalWrite(TEMP_SWITCH_2, LOW);		   //send signal to switch back to reference resistor 2
-  return measurement;					            //return the measured value from the ADC
+  return measurement;					           //return the measured value from the ADC
 }
 
 int16_t readSST() {			                 //function to read temperature ADC for SST thermistor
-  digitalWrite(TEMP_SWITCH_1, HIGH);       //send signal to switch to top thermistor reading
-  digitalWrite(TEMP_SWITCH_2, HIGH);       //send signal to switch to top thermistor reading
-  delay(1000);                            //delay to let voltage stabilize
-  int16_t measurement = readTempADC();    //read the ADC (Same for thermistor or reference)
+  digitalWrite(TEMP_SWITCH_1, HIGH);     //send signal to switch to top thermistor reading
+  digitalWrite(TEMP_SWITCH_2, HIGH);     //send signal to switch to top thermistor reading
+  delay(1000);                           //delay to let voltage stabilize
+  int16_t measurement = readTempADC();   //read the ADC (Same for thermistor or reference)
   digitalWrite(TEMP_SWITCH_1, LOW);      //send signal to switch back to reference resistor 1
   digitalWrite(TEMP_SWITCH_2, LOW);      //send signal to switch back to reference resistor 2
-  return measurement;                     //return the measured value from the ADC
+  return measurement;                    //return the measured value from the ADC
 }
 
-int16_t readTempRef() {			             //function to read temperature ADC for top thermistor
-  delay(1000);                            //delay to let voltage stabilize
-  int16_t measurement = readTempADC();    //read the ADC (Same for thermistor or reference)
-  return measurement;                     //return the measured value from the ADC
+int16_t testSST() {                      //function to read temperature ADC for SST thermistor 
+  digitalWrite(TEMP_SWITCH_1, HIGH);     //send signal to switch to top thermistor reading
+  digitalWrite(TEMP_SWITCH_2, HIGH);     //send signal to switch to top thermistor reading
+  delay(250);                            //sample ADC 4 times per second (4Hz or once every 250 milliseconds)
+  int16_t measurement = readTempADC();   //read the ADC (Same for thermistor or reference)
+  digitalWrite(TEMP_SWITCH_1, LOW);      //send signal to switch back to reference resistor 1
+  digitalWrite(TEMP_SWITCH_2, LOW);      //send signal to switch back to reference resistor 2
+  return measurement;                    //return the measured value from the ADC
+}
+
+int16_t testTopTemp() {                  //function to read temperature ADC for top thermistor
+  digitalWrite(TEMP_SWITCH_1, HIGH);     //send signal to switch to top thermistor reading
+  digitalWrite(TEMP_SWITCH_2, LOW);      //send signal to switch to top thermistor reading
+  delay(250);                            //sample ADC 4 times per second (4Hz or once every 250 milliseconds)
+  int16_t measurement = readTempADC();   //read the ADC (Same for thermistor or reference)
+  digitalWrite(TEMP_SWITCH_1, LOW);      //send signal to switch back to reference resistor 1
+  digitalWrite(TEMP_SWITCH_2, LOW);      //send signal to switch back to reference resistor 2
+  return measurement;                    //return the measured value from the ADC
+}
+
+int16_t readTempRef() {			             //function to read temperature ADC for temp ref
+  delay(1000);                           //delay to let voltage stabilize
+  int16_t measurement = readTempADC();   //read the ADC (Same for thermistor or reference)
+  return measurement;                    //return the measured value from the ADC
 }
 
 int16_t readTempADC() {
-  uint8_t controlRegister = 0;				        //initialize control registoer variable
-  int16_t adcVal = 0;						              //initialize ADC Value variable
+  uint8_t controlRegister = 0;				    //initialize control registoer variable
+  int16_t adcVal = 0;						          //initialize ADC Value variable
   Wire.requestFrom(ads1100A0, 3);  			  //request 3 bytes from appropriate ADC using I2C
   while (Wire.available()) { 					    //ensure all the data comes in
     adcVal = Wire.read(); 		        	  //first byte is MSB
@@ -1300,4 +1362,3 @@ bool ISBDCallback(){
 //   }
    return true;
 }
-
