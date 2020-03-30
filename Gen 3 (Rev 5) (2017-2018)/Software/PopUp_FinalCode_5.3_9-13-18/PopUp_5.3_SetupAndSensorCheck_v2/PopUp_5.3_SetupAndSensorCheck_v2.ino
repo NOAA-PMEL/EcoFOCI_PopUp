@@ -3,14 +3,14 @@
 #define SN 2018                       //INPUT POP-UP S/N as SN = ####
 
 //INPUT for Topside Temperature Probe (TTP)
-float At = 0.00117611211;  //INPUT Steinhart-Hart Coeficient A for probes and unit of interest
-float Bt = 0.000231799033;  //INPUT Steinhart-Hart Coeficient B for probes and unit of interest
-float Ct = 0.000000106066762;  //INPUT Steinhart-Hart Coeficient C for probes and unit of interest
+float At = 0.00117611211;  //INPUT Steinhart-Hart Coeficient A for probes from unit of interest
+float Bt = 0.000231799033;  //INPUT Steinhart-Hart Coeficient B for probes from unit of interest
+float Ct = 0.000000106066762;  //INPUT Steinhart-Hart Coeficient C for probes from unit of interest
 
 //INPUT for Sea Surface Temperature (SST) Probe
-float As = 0.00105471332;  //INPUT Steinhart-Hart Coeficient A for probes and unit of interest
-float Bs = 0.00024840849;   //INPUT Steinhart-Hart Coeficient B for probes and unit of interest
-float Cs = 0.0000000603057951;  //INPUT Steinhart-Hart Coeficient C for probes and unit of interest
+float As = 0.00105471332;  //INPUT Steinhart-Hart Coeficient A for probes from unit of interest
+float Bs = 0.00024840849;   //INPUT Steinhart-Hart Coeficient B for probes from unit of interest
+float Cs = 0.0000000603057951;  //INPUT Steinhart-Hart Coeficient C for probes from unit of interest
 
 
 //include various libraries
