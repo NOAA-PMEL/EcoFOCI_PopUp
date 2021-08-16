@@ -1,0 +1,2 @@
+,time,pressure,topside_temp,topside_temp_ADC,underside_temp,underside_temp_ADC,temp_ref,par,fluor,tilt,datetime,id,dep_lat,dep_lon
+0,10800,0.0238037109375,12.48546441882712,15138,10.608457221906804,16397,8508,0.0,0,109,2019-06-20 07:00:00,300434063863000,47.68416,122.25861

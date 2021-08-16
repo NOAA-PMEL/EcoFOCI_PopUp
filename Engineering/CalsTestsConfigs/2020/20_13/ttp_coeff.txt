@@ -1,0 +1,5 @@
+Coeffs: [1.19726606e-03 2.28893295e-04 1.13531451e-07]
+Max Residual Error: 0.00015581453510549181
+Mean Residual Error: 7.087762156743338e-05
+Standard Deviation of Residual Error: 5.191374418807405e-05
+No FFFFF, proceed to split on FFFF

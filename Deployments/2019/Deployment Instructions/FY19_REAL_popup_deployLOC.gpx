@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <wpt lat="63.844800167" lon="-167.788800000">
+    <time>2019-10-15T09:51:46Z</time>
+    <name>211REAL</name>
+    <desc>deploy depth 33m
+deploy date 09/28/19
+pop date 10/01/20</desc>
+    <sym>Sea-DepthB-Orange</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>37d20000-8c79-4392-955b-f8095d70ffff</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+    </extensions>
+  </wpt>
+  <wpt lat="59.780600000" lon="-172.852816000">
+    <time>2019-10-15T09:59:08Z</time>
+    <name>213REAL</name>
+    <desc>deploy depth 83.2m
+deploy date 09/26/19
+pop date 10/01/20</desc>
+    <sym>Sea-DepthB-Orange</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>12280000-d843-4d24-9292-6bf24cbbffff</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+    </extensions>
+  </wpt>
+  <wpt lat="60.611833173" lon="-173.454160000">
+    <time>2019-10-15T09:57:03Z</time>
+    <name>214REAL</name>
+    <desc>deploy depth 62.5m
+deploy date 09/24/19
+pop date 10/01/20</desc>
+    <sym>Sea-DepthB-Orange</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>6e6bffff-85f1-4fac-b34e-ffe16215ffff</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+    </extensions>
+  </wpt>
+  <wpt lat="61.999000000" lon="-168.582770000">
+    <time>2019-10-15T09:55:07Z</time>
+    <name>215REAL</name>
+    <desc>deploy depth 34m
+deploy date 09/29/19
+pop date 10/01/20</desc>
+    <sym>Sea-DepthB-Orange</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7cf4ffff-248c-4251-9147-e9b76087ffff</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+      <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+    </extensions>
+  </wpt>
+</gpx>

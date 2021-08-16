@@ -1,0 +1,33 @@
+---
+#INPUT Temperature Bath Calibration File Name: TB######, for record & tracking only
+TB: TB120069
+#INPUT S/N of unit after TempCal_###
+UnitID: TempCal_2008/2009/2010/2011/2013/2014
+#INPUT UNIT START TIME of unit
+#UNIT RELEASE TIME is arbitrary as long as it is after calibration end date/time.
+Unit_Start_Time: '2020-3-9 22:00:00'
+Unit_Release_Time: '3000-3-3 20:00:00' 
+############################################################
+#The following constants are for temperature bath calibrations: 
+#bottom sample interval is set to one sample every 30 seconds, no ice, profile or sst files are needed.
+
+sample_interval: 
+  bottom: 30
+
+underside_temp_cal: 
+  Acoef: 1000
+  Bcoef: 1000
+  Ccoef: 1000
+
+topside_temp_cal: 
+  Acoef: 1000
+  Bcoef: 1000
+  Ccoef: 1000
+
+par_cal: 
+  offset:  5458
+  slope:  0.01415
+
+fluor_cal: 
+  offset:  40
+  slope:  0.020920502

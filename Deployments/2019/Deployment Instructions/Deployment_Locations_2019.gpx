@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="63.8397" lon="167.7914">
+  <name>Popup_211</name>
+</wpt>
+<wpt lat="59.2291" lon="173.328">
+  <name>Popup_213</name>
+</wpt>
+<wpt lat="59.785" lon="174.927">
+  <name>Popup_216</name>
+</wpt>
+<wpt lat="62.0" lon="168.5833">
+  <name>Popup_215</name>
+</wpt>
+<wpt lat="58.3959" lon="171.457">
+  <name>Popup_214</name>
+</wpt>
+<wpt lat="60.613" lon="173.449">
+  <name>Popup_218</name>
+</wpt>
+</gpx>
