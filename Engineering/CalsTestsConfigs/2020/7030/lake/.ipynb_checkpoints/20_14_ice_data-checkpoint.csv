@@ -1,0 +1,2 @@
+,time,pressure,ttp_temp,ttp_temp_ADC,sst_temp,sst_temp_ADC,temp_ref,par,fluor,tilt,datetime,id,dep_lat,dep_lon
+0,10800,0.02655029296875,20.13918183043029,10573,16.386613824517383,12691,8520,0.0,0,4,2020-05-20 02:00:00,2014,47.687,122.259

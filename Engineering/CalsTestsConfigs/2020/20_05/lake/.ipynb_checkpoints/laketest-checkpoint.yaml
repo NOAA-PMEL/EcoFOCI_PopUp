@@ -1,0 +1,35 @@
+#INPUT S/N of unit
+UnitID: 20_05_
+Unit_Start_Time: '2020-6-30 17:00:00'
+Unit_Release_Time: '2020-6-30 22:00:00'
+Unit_Deploy_Time: '2020-6-30 16:45:00'
+Deploy_LatN: 47.687
+Deploy_LonW: 122.259
+Deploy_Depth: 10
+############################################################
+#The following are constants that are unit specific
+#This test was "dry" and therefore the profile was skipped
+
+sample_interval: 
+  bottom: 3600
+  ice: 3600
+  sst: 3600
+
+sst_temp_cal: 
+  Acoef: 1.21860374e-03
+  Bcoef: 2.21753083e-04
+  Ccoef: 1.66927166e-07
+
+ttp_temp_cal: 
+  Acoef: 1.19592366e-03
+  Bcoef: 2.29076131e-04
+  Ccoef: 1.12298413e-07
+
+par_cal: 
+  offset:  5458
+  slope:  0.01367
+
+fluor_cal: 
+  offset:  0
+  slope:  0
+  
