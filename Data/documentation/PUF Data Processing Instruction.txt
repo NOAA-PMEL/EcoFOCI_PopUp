@@ -1,0 +1,25 @@
+PUF Data Processing Instruction
+
+
+You will need the following applications found in pesto/Tools:
+
+    Python 
+    Anaconda / Miniconda
+        *open Anaconda prompt and install Jupyter Lab by typing:
+            conda install -c conda-forge jupyterlab
+    GitHub Desktop
+    PuTTY
+    WinSCP
+    
+You will also need internal server access to akutan
+
+Get access to PMEL's internal GitHub by emailing Eugene Burger, create GitHub account
+
+Open GitHub desktop and clone EcoFOCI_PopUp repository using URL https://github.com/NOAA-PMEL/EcoFOCI_PopUp.git
+
+In GitHub desktop, switch to working-overhaul branch 
+
+Open Anaconda prompt, type command 
+        jupyter-lab
+        
+In JupyterLab, go to EcoFOCI_PopUp/Data/src and open 00_PopUpFloat_Background or 01_PopUpFloat_Instruction to continue
