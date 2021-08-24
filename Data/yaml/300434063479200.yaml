@@ -27,15 +27,15 @@ version : 2
   
 # slow-response temperature calibration coefficients
 sr_temp_cal:
-  Acoef: 1.25E-03
-  Bcoef: 2.16E-04
-  Ccoef: 1.89E-07
+  Acoef: 1.00709218e-03
+  Bcoef: 2.54137655e-04
+  Ccoef: 5.04799744e-08
   
 # fast-response temperature calibration coefficients
 fr_temp_cal:
-  Acoef: 1.18E-03
-  Bcoef: 2.33E-04
-  Ccoef: 9.74E-08
+  Acoef: 1.16522790e-03
+  Bcoef: 2.34098059e-04
+  Ccoef: 9.35448486e-08
   
 # par offset is ADC with no light 
 # par slope is Skye calibration cert
@@ -44,7 +44,7 @@ par_cal:
   slope:  0.01355
 
 # fluor offset is ADC in DIW at the x10 gain pinout
-# fluor slope is (40ug/L/(ADC_dyex10 - ADC_DIWx10)/10)
+# fluor slope is (40ug/L/(FL_ADC_400ppbx10 - FL_ADC_DI_x10_OFFSET)/10)
 fluor_cal: 
   offset:  55
   slope:  0.0001975796493
