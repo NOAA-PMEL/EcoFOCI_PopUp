@@ -38,19 +38,21 @@ In addition to the pop-up floats, one pop-top float was attached to mooring 19BS
 n=13 in the Bering and n=2 in the Chukchi at C2 and C12. The floats deployed in the Chukchi at C2 and C12
 were outfitted with depth, temperature, PAR, fluorometer and camera. 
 Float 4230 released 3/1/2021 and 9200 released 4/15/2021. Both floats transmitted data! The 13 floats deployed in the Bering Sea
-will release from their anchors simultaneously on 9/15/2021. 
+will release from their anchors simultaneously on 9/15/2021. ** add info here about success/failures of 2020 deployment
 
 2021 n=6 Gen3.2 Arduino-controlled floats will be deployed in September 2021
 
 ** all pop-up units start sampling 2022 jan 1st 
-programmed! unit 2460 C2 release 2022 apr 25th / optional exchange cape lisburn (ice shoals @30m)
-programmed! unit 0020 C2 release 2022 may 5th
-programmed! unit 4770 C12/point hope release 2022 apr 10th 
-programmed! unit 4440 C12/point hope release 2022 apr 20th 
-programmed! unit 9010 C2 release 2022 apr 25th
+programmed! awaiting deployment... unit 2460 C2 release 2022 apr 25th / optional exchange cape lisburn (ice shoals @30m)
+programmed! awaiting deployment...unit 0020 C2 release 2022 may 5th
+programmed! awaiting deployment...unit 4770 C12/point hope release 2022 apr 10th 
+programmed! awaiting deployment...unit 4440 C12/point hope release 2022 apr 20th 
+programmed! awaiting deployment...unit 9010 C2 release 2022 apr 25th
 
 ** pop-top 
-programmed! 21BSpoptop-8A start sampling april 1st 2022, release 2022 jun 1st, recording bottom data file only 
+programmed! awaiting deployment...21BSpoptop-8A start sampling april 1st 2022, release 2022 jun 1st, recording bottom data file only 
 (no transmission possible, no iridium modem included!, recovery required!)
+
+** add info here about success/failures of 2021 deployment
 
 
