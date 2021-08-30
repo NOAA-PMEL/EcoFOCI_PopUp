@@ -1,0 +1,57 @@
+---
+IMEI: 300434063472030
+IMEI_SN: '2030'
+ENG_SN: '2015'
+Deployment_ID: '20BSPCOD-TP2030'
+
+## date-time format YYYY-MM-DD HH:MM:SS 
+## date-time recorded in UTC
+Unit_Start_Time: '2020-08-01 00:00:00'
+Unit_Release_Time: '2021-09-15 00:00:00'
+Unit_Deploy_Time: '2020-09-15 03:15:00'
+
+Deploy_LatN: 56.4533 # Latitude degrees North >0, degrees South <0, range -90 to 90
+Deploy_LonW: -168.5545 # Longitude degrees West <0 , degrees East >0, range -180 to 180
+Deploy_Depth: 113.4 # depth in meters, measured at least to the nearest meter.
+
+# sample interval in seconds
+sample_interval: 
+  bottom: 3600
+  ice:  3600
+  sst:  3600
+  
+# temperature calibration coefficients were either calculated via log10 or Ln
+# if calculated using log10, version = 1
+# if calculated using (natural) ln, version = 2
+version : 2
+  
+# slow-response temperature calibration coefficients
+sr_temp_cal:
+  Acoef: 1.743E-03
+  Bcoef: 1.451E-04
+  Ccoef: 4.075E-07
+  
+# fast-response temperature calibration coefficients
+fr_temp_cal:
+  Acoef: 1.188E-03
+  Bcoef: 2.302E-04
+  Ccoef: 1.096E-07
+
+# no par on this unit  
+# par offset is ADC with no light 
+# par slope is Skye calibration cert
+par_cal: 
+  offset:  0
+  slope:  0
+
+# NO FLUOR ON THIS UNIT
+# fluor offset is ADC in DIW at the x10 gain pinout
+# fluor slope is (40ug/L/(ADC_dyex10 - ADC_DIWx10)/10)
+fluor_cal: 
+  offset:  0
+  slope:  0
+  
+  ### other notes
+# sample interval for sst is 3hours but when calculating from short
+# timestamp, it will use 1hour (pop-time)+samplenum*1hr
+# *(this is true of ice and bottom too but the samplewrite and sampletake intervals are both 1hr)

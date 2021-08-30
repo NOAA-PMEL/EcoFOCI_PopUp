@@ -1,0 +1,32 @@
+---
+#INPUT Temperature Bath Calibration File Name: TB######, for record & tracking only
+TB: TB121043
+#INPUT UNIT START TIME IN UTC yyyy-mm-dd hh:mm:ss
+#UNIT RELEASE TIME is arbitrary as long as it is after calibration end date/time.
+Unit_Start_Time: '2021-02-12 20:00:00'
+Unit_Release_Time: '3000-12-30 00:00:00' 
+############################################################
+#The following constants are for temperature bath calibrations: 
+#bottom sample interval is set to one sample every 30 seconds, no ice, profile or sst files are needed
+#for tempcal yaml, keep all temperature probe coefficients (coef) at 1000 
+
+sample_interval: 
+  bottom: 30
+
+frp_temp_cal: 
+  Acoef: 1000
+  Bcoef: 1000
+  Ccoef: 1000
+
+srp_temp_cal: 
+  Acoef: 1000
+  Bcoef: 1000
+  Ccoef: 1000
+
+par_cal: 
+  offset:  5458
+  slope:  0.01415
+
+fluor_cal: 
+  offset:  40
+  slope:  0.020920502

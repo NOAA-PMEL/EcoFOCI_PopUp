@@ -1,0 +1,39 @@
+---
+IMEI: 300434063477010
+ENG_SN: 0213
+Deployment_ID: 19BSITAE-TP7010
+## date-time format YYYY-MM-DD HH:MM:SS 
+## date-time recorded in UTC
+Unit_Start_Time: '2019-10-1 00:00:00'
+Unit_Release_Time: '2020-10-31 00:00:00'
+Unit_Deploy_Time: '2019-9-26 02:40:00'
+Deploy_LatN: 59.7807
+Deploy_LonW: 172.8528
+Deploy_Depth: 83.2
+
+############################################################
+### The following constants are instrument specific
+sample_interval: 
+  bottom: 3600
+  ice:  3600
+  sst:  3600
+
+sst_temp_cal:
+  Acoef: 1.226E-03
+  Bcoef: 5.182E-04
+  Ccoef: 1.517E-06
+
+ttp_temp_cal:
+  Acoef: 1.240E-03
+  Bcoef: 5.123E-04
+  Ccoef: 1.639E-06
+
+#no par on this unit
+par_cal: 
+  offset:  0
+  slope:  0
+
+#no fluor on this unit
+fluor_cal: 
+  offset:  0
+  slope:  0

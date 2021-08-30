@@ -1,0 +1,28 @@
+Unit set up Complete
+Unit Status:
+  SD Card Initialized Successfully.
+  Current RTC Time/Date: Jun 06 2019 18:22:40
+  Temp Sensor ADC Val: 9030 (approx 13.86 C)
+  SST (Sea Surface Temp) Sensor ADC Val: 9479 (approx 12.83 C)
+  Temp Ref    ADC Val: 8502 (approx 15.52 kOhms)
+  PAR  Sensor ADC Val: 5463 (approx 0.20 umol/(m2s))
+  Fluorometer ADC Val: -457 (approx ? ug/L)
+  Pressure Sensor Val: 16548 (approx 0.50 m)
+  Tilt Angle: 178 degrees from horizontal
+
+-----------------------------------------------
+'1' - display Status
+'2' - set RTC time/date
+'3' - check Temperature Sensors
+'4' - check Pressure Sensor
+'5' - check Tilt Sensor
+'6' - check PAR Sensor
+'7' - check Fluorometer
+'S' - check GPS Satellites
+'F' - check GPS Fix
+'I' - check Iridium
+'C' - check Camera
+'D' - display SD Card Data
+'X' - delete all SD Card Data
+-----------------------------------------------
+

@@ -1,0 +1,4 @@
+Coeffs: [1.16522790e-03 2.34098059e-04 9.35448486e-08]
+Max Residual Error: 0.00033295470342409317
+Mean Residual Error: 0.00015920997056658356
+Standard Deviation of Residual Error: 0.00010186703675013418
