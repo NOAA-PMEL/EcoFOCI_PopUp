@@ -1,3 +1,6 @@
-.DS_Store
-~*
+*.DS_Store
+~$*
 EcoFOCI_PopUp/Data/rawdata/ecofoci.popupsbd/*
+*checkpoint*
+Data/rawdata/ecofoci.popupsbd/*
+Data/results/*
