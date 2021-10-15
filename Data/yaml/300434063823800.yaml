@@ -12,8 +12,8 @@ Unit_Start_Time: '2018-8-7 8:00:00'
 Unit_Release_Time: '2019-4-30 23:00:00'
 Unit_Deploy_Time: '2018-8-12 03:55:00'
 
-Deploy_LatN: 71.2228 #Latitude degrees North >0, degrees South <0, range -90 to 90
-Deploy_LonW: -164.2613 #Longitude degrees West <0 , degrees East >0, range -180 to 180
+Deploy_LatN: 70.0153 #Latitude degrees North >0, degrees South <0, range -90 to 90
+Deploy_LonW: -166.8402 #Longitude degrees West <0 , degrees East >0, range -180 to 180
 Deploy_Depth: 71 #depth in meters, measured at least to the nearest meter.
 
 #sample interval in seconds
