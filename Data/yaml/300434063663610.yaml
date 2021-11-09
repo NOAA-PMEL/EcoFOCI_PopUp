@@ -8,7 +8,7 @@ Deployment_ID: '20BSPCOD-TP3610'
 ## date-time recorded in UTC
 Unit_Start_Time: '2020-08-01 00:00:00'
 Unit_Release_Time: '2021-09-15 0:00:00'
-Unit_Deploy_Time: 'TBD'
+Unit_Deploy_Time: '2020-09-19 17:41:00'
 
 Deploy_LatN: 59.2450 # Latitude degrees North >0, degrees South <0, range -90 to 90
 Deploy_LonW: -169.4083 # Longitude degrees West <0 , degrees East >0, range -180 to 180
