@@ -51,7 +51,11 @@ fluor_cal:
   offset:  0
   slope:  0
   
-  ### other notes
+press_scal:
+  multiplier: 3
+  
+### other notes
 # sample interval for sst is 3hours but when calculating from short
 # timestamp, it will use 1hour (pop-time)+samplenum*1hr
 # *(this is true of ice and bottom too but the samplewrite and sampletake intervals are both 1hr)
+# pressure sensor is non - standard, converted value needs to be multiplied by 3 as the conversion equation was initially designed for a 10bar sensor
