@@ -27,9 +27,9 @@ version : 1
 
 #slow-response temperature calibration coefficients
 sr_temp_cal:
-  Acoef: 9.161E-04
-  Bcoef: 6.231E-04
-  Ccoef: -2.648E-07
+  Acoef: 1.292E-03
+  Bcoef: 4.960E-04
+  Ccoef: 1.895E-06
 
 #fast-response temperature calibration coefficients
 fr_temp_cal:
@@ -47,8 +47,6 @@ fluor_cal:
   offset:  0
   slope:  0
 
-press_scal:
-  multiplier: 1
   
 ### other notes
 # sample interval for sst is 3hours but when calculating from short
